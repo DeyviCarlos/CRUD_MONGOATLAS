@@ -1,0 +1,147 @@
+<app-menu-productor></app-menu-productor>
+
+<div class="container">
+    <!-- navegación horizontal de página actual-->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Datos Personales</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- contenido de la pagina actual -->
+    <section>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <!--carta de datos personales-->
+                        <div class="card card-success card-outline">
+                            <div class="card-body box-profile">
+                                <!--carta de datos personales
+                                <div class="text-center">
+                                    <img id="avatar2" src="../img/avatar.png"
+                                        class="profile-user-img img-fluid img-circle">
+                                </div>
+                                <div class="text-center mt-1">
+                                    <button type="button" data-toggle="modal" data-target="#cambiophoto"
+                                        class="btn btn-primary btn-sm">Cambiar avatar</button>
+                                </div>
+                                -->
+                                <div *ngIf = "usuario">
+                                    <input type="hidden" id="id_usuario" value="">
+                                    <h3 id="nombre_us" class="profile-usermane text-center text-success">{{ usuario.nombre }}</h3>
+                                    
+                                    <ul class="list-group list-group-unbordered mb-3">
+                                        <li class="list-group-item">
+                                            <b style="color:#0B7300">RUC o DNI: </b><a id="dni_us" class="float-right">........</a>
+                                        </li>
+                                        <li class="list-group-item">
+                                                <b style="color:#0B7300">Tipo de Usuario: </b>
+                                                <span id="us_tipo" class="float-right">{{ usuario.rol }}</span>
+                                        </li>
+                                        <button type="button" class="btn btn-block btn-outline-warning btn-sm"
+                                            data-toggle="modal" data-target="#cambiocontra">Cambiar Contraseña</button>
+                                    </ul>
+                                </div> 
+                            </div>
+
+                        </div>
+                        <!--Carta sobre mi-->
+                        <div class="card card-success">
+                            <!--card titulo sobre mi-->
+                            <div class="card-header">
+                                <h3 class="card-title">Sobre mi</h3>
+                            </div>
+                            <div class="card-body">
+                                <!--telefono-->
+                                <strong style="color:#007300">
+                                    <!--icono de telefono fa-phone-->
+                                    <i class="fas fa-phone mr-1"></i>Telefono
+                                </strong>
+                                <p id="telefono_us" class="text-muted">999999999</p>
+                                <!--Residencia-->
+                                <strong style="color:#007300">
+                                    <!--icono de localización fa-map-marker-alt -->
+                                    <i class="fas fa-map-marker-alt mr-1"></i>Ubicación
+                                </strong>
+                                <p id="residencia_us" class="text-muted">Mz V LT 21</p>
+                                <!--correo-->
+                                <strong style="color:#007300">
+                                    <!--icono de arroba-->
+                                    <i class="fas fa-at mr-1"></i>Correo
+                                </strong>
+                                <p id="correo_us" class="text-muted">{{ usuario.email }}</p>
+                                <!--informacion adicional-->
+                                <strong style="color:#007300">
+                                    <!--icono de lapiz-->
+                                    <i class="fas fa-pencil-alt mr-1"></i>Información Adicional
+                                </strong>
+                                <p id="adicional_us" class="text-muted">........</p>
+                                <button class="edit btn btn-block btn-outline-warning">Editar</button>
+                            </div>
+                            <div class="car-footer">
+                                <p class="text-muted">click en boton si desea editar</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <!--contenido de edición de datos-->
+                    <div class="col-md-9">
+                        <div class="card card-success">
+                            <div class="card-header">
+                                <h3 class="card-title">Editar datos personales</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-success text-center m-1" id="editado" style="display:none;">
+                                    <span><i class="fas fa-check"></i>Editado</span>
+                                </div>
+                                <div class="alert alert-danger text-center" id="noeditado" style="display:none;">
+                                    <span><i class="fas fa-times m-1"></i>Edición Deshabilitada</span>
+                                </div>
+                                <form  [formGroup]="usuarioForm" (ngSubmit)="obtenerPerfil()" id="form-usuario" class="form-horizontal">
+                                    <div class="form-group row">
+                                        <label for="" class="col-sm-2 col-form-label">Telefono</label>
+                                        <div class="col-sm-10">
+                                            <input type="number" id="telefono" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-sm-2 col-form-label">Ubicación</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" id="residencia" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="" class="col-sm-2 col-form-label">Información Adicional</label>
+                                        <div class="col-sm-10">
+                                            <textarea cols="30" rows="10" id="adicional"
+                                                class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="offset-sm-2 col-sm-10 float-rigth">
+                                            <button class="btn btn-block btn-outline-success">Guardar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

@@ -1,0 +1,31 @@
+<app-nav></app-nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">CREAR USUARIO</span>
+                    <form class="mt-3" [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="nombre" id="nombre" class="form-control" placeholder="Digite el nombre">
+                            <div class="text-danger" *ngIf="usuarioForm.get('nombre')?.hasError('required') && usuarioForm.get('nombre')?.touched">
+                                <span>El nombre del usuario <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="apellido_paterno" class="form-control" id="apellido_paterno" placeholder="Digite el apellido">
+                            <div class="text-danger" *ngIf="usuarioForm.get('apellido_paterno')?.hasError('required') && usuarioForm.get('apellido_paterno')?.touched">
+                                <span>El apellido paterno del usuario <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button routerLink="/tienda/usuarios" class="btn btn-secondary float-start">VOLVER</button>
+                            <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-primary float-end">GUARDAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

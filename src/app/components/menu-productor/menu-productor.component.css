@@ -1,0 +1,9 @@
+.logo{
+    color: rgb(96, 160, 88);
+}
+.logo span{
+    color: rgb(96, 160, 88);
+}
+.cerrar-sesion{
+    cursor: pointer;
+}

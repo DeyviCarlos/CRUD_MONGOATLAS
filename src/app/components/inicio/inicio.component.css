@@ -1,0 +1,27 @@
+:root{
+    --main-color: #fd4646 ;
+    --text-color: #171427;
+    --bg-color: #fff;
+}
+.section-title{
+    display: flex;
+    justify-content: center;
+}
+.product-img{
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.add-cart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--text-color);
+    color: var(--main-color);
+    padding: 10px;
+    cursor: pointer;
+}
+.add-cart:hover{
+    background: hsl(32, 89%, 65%);
+}

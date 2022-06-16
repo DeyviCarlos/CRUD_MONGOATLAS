@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+<section class="container ">
+    <div class="row vh-100">
+        <div class="container-fluid container-contactos">
+            <h1 class="h1-contactos">Contactos</h1>
+            <!--
+    <h2>Llene el formulario de Contactos</h2>-->
+            <div class="contac-img">
+                <img src="./assets/img/contactos.jpg" alt="">   
+            </div>
+            
+            <div class="container contactanos">
+                <div class="contacto">
+                    <form [formGroup]="contactoForm" class="formulario" action="">
+                        <fieldset>
+                            <legend>Información Personal</legend>
+        
+                            <div class="mb-3">
+                                <label for="nombre">Nombre</label>
+                                <div class="input-group mb-3 ml-3">
+                                    <input type="text" formControlName="nombre" id="nombre" class="form-control"
+                                        placeholder="Nombre Completo">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email">E-mail</label>
+                                <div class="input-group mb-3 ml-3">
+                                    <input type="email" formControlName="email" id="email" class="form-control"
+                                        placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="telefono">Teléfono</label>
+                                <div class="input-group mb-3 ml-3">
+                                    <input type="tel" formControlName="telefono" id="telefono" class="form-control"
+                                        placeholder="Teléfono">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensaje">Mensaje</label>
+                                <textarea class="bloque"  cols="30" rows="10" id="mensaje" formControlName="mensaje"></textarea>
+                            </div>
+                            <input type="submit" value="enviar" class="btn btn-primary float-end mb-3">
+                        </fieldset>
+                        
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>

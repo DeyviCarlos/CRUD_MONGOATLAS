@@ -1,0 +1,18 @@
+<app-nav></app-nav>
+<section class="container">
+  <h2 class="section-title pt-3 pb-3">Shop Products</h2>
+  <!--content-->
+  <div class="row d-flex align-items-stretch" >
+      <!--BOX 1-->
+      <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch"  *ngFor="let producto of listaProductos">
+        <div class="card" >
+            <img src="./assets/img/bolso-1.JPG" alt="" class="product-img">
+            <div class="card-body">
+              <h2 class="card-title">{{ producto.descripcion }}</h2>
+              <span class="card-text">${{ producto.precio }}</span>
+              <i class="fas fa-shopping-bag add-cart"></i>
+            </div>
+        </div>
+      </div>
+  </div>
+</section>

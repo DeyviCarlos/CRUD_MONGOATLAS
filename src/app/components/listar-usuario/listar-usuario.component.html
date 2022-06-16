@@ -1,0 +1,39 @@
+<app-menu-productor></app-menu-productor>
+
+<div class="container mt-5">
+    <div class="row vh-100">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">LISTADO DE USUARIOS</span>
+                    <button class="btn btn-primary float-end" routerLink="/tienda/usuarios/create">NUEVO</button>
+                    <table class="table table-striped mt-3">
+                        <thead>
+                          <tr>
+                            <th scope="col">NOMBRE</th>
+                            <th scope="col">Acciones</th>
+                          </tr>
+                        </thead>
+                        <tbody *ngIf="listaUsuario.length > 0">
+                          <!--se implementa un for de angular para iterar los resultados del arreglo obtenido del back-->
+                          <tr *ngFor="let usuario of listaUsuario">
+                            <td>{{ usuario.nombre }}</td>
+                            <td>
+                                <i [routerLink]="['/tienda/usuarios/edit', usuario._id]" class="fas fa-edit text-success"></i>
+                                <i (click)="eliminarUsuario(usuario._id)" class="fas fa-trash text-danger"></i>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="mb-3">
+                        <h5 style="text-align: start; margin-top: 10px;" *ngIf="listaUsuario.length == 0">No hay usuarios para mostrar</h5>
+                      </div>
+                      <div class="mb-3">
+                        <button routerLink="/" class="btn btn-secondary btn-block float-start">VOLVER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
