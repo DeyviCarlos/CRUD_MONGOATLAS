@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
 
 
-
 @Injectable({
   providedIn: 'root'
 })

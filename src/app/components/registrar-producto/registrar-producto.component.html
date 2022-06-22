@@ -1,1 +1,42 @@
-<p>registrar-producto works!</p>
+<app-menu-productor></app-menu-productor>
+<div class="container mt-5 vh-100">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="titulo">REGISTRAR PRODUCTO</span>
+                    <form class="mt-3" [formGroup]="productoForm" (ngSubmit)="agregarProducto()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="descripcion" id="descripcion" class="form-control" placeholder="Digite un descripción">
+                            <div class="text-danger" *ngIf="productoForm.get('descripcion')?.hasError('required') && productoForm.get('descripcion')?.touched">
+                                <span>La descripción <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="precio" class="form-control" id="precio" min="0" placeholder="Digite el precio">
+                            <div class="text-danger" *ngIf="productoForm.get('precio')?.hasError('required') && productoForm.get('precio')?.touched">
+                                <span>El precio <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="categoria" class="form-control" id="categoria" placeholder="Digite la categoría">
+                            <div class="text-danger" *ngIf="productoForm.get('categoria')?.hasError('required') && productoForm.get('categoria')?.touched">
+                                <span>La categoría <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="unidadMedida" class="form-control" id="unidadMedida" placeholder="Digite la unidad de medida">
+                            <div class="text-danger" *ngIf="productoForm.get('unidadMedida')?.hasError('required') && productoForm.get('unidadMedida')?.touched">
+                                <span>La unidad de medida <strong>es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button routerLink="/tienda/productos" class="btn btn-secondary float-start">VOLVER</button>
+                            <button type="submit" [disabled]="productoForm.invalid" class="btn btn-primary float-end">GUARDAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

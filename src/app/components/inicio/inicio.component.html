@@ -1,18 +1,38 @@
 <app-nav></app-nav>
-<section class="container">
-  <h2 class="section-title pt-3 pb-3">Shop Products</h2>
-  <!--content-->
-  <div class="row d-flex align-items-stretch" >
-      <!--BOX 1-->
-      <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch"  *ngFor="let producto of listaProductos">
-        <div class="card" >
-            <img src="./assets/img/bolso-1.JPG" alt="" class="product-img">
-            <div class="card-body">
-              <h2 class="card-title">{{ producto.descripcion }}</h2>
-              <span class="card-text">${{ producto.precio }}</span>
-              <i class="fas fa-shopping-bag add-cart"></i>
-            </div>
+<section class="contenedor">
+  <!--header-->
+  <div class="titulo-contenido vh-100">
+    <div class="container">
+      <div class="container-titulo">
+        <div class="container-titulo-betwen">
+          <h1>Los mejores productos para el cuidado <br> del medio Ambiente</h1>
+          <p><a class="Selecciona btn-primary" routerLink="/tienda/catalogo">Ir al Catalogo</a></p>
         </div>
       </div>
+    </div>
   </div>
+  <!-- Categoria -->
+  <div class="container-categoria" >
+    <h2 class="section-title">Categoría</h2>
+    <app-carousel-categoria [categorias]="categorias" [autoSlide]="true">
+    </app-carousel-categoria>
+  </div>
+  <!--BLOG -->
+  <div class="container">
+    <div class="container-blog">
+      <h2 class="section-title blog-title">Comentarios</h2>
+      <div class="card-group" *ngIf="comentariosCliente.length > 0">
+        <div class="card" *ngFor="let comentario of comentariosCliente">
+          <div class="card-body">
+            <i class="fa fa-quote-left"></i>
+            <p class="card-text">{{ comentario.descripcion }}</p>
+            <div class="profile">
+              <h3 class="card-text"><b>{{comentario.nombre}}</b></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </section>

@@ -3,6 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NgxUsefulSwiperModule } from 'ngx-useful-swiper';
+import { SidebarModule } from 'ng-sidebar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { ListarUsuarioComponent } from './components/listar-usuario/listar-usuario.component';
 import { EditarUsuarioComponent } from './components/editar-usuario/editar-usuario.component';
@@ -21,6 +25,9 @@ import { ListarProductoComponent } from './components/listar-producto/listar-pro
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { CatalogoComponent } from './components/catalogo/catalogo.component';
+import { CarouselModule } from './carousel/carousel.module';
+import { CarouselCategoriaModule } from './components/carousel-categoria/carousel-categoria.module';
 
 
 @NgModule({
@@ -38,13 +45,19 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
     MenuProductorComponent,
     RegistrarProductoComponent,
     PerfilComponent,
-    ListarProductoComponent
+    ListarProductoComponent,
+    CatalogoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxUsefulSwiperModule,
+    CarouselModule,
+    CarouselCategoriaModule,
+    SidebarModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [AuthGuard,
     {
