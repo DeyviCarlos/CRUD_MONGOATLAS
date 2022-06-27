@@ -1,66 +1,47 @@
-<div class="login">
-    <div class="container">
-        <div class="row  vh-100 justify-content-center align-items-center ">
-            <div class="col-auto bg-light p-5">
-
-                <p class="titulo text-center">INICIAR SESIÓN</p>
-
-                <form [formGroup]="loginForm" (ngSubmit)="logearUsuario()">
-                    <div class="mb-3">
-                        <div class="input-group mb-3">
-                            <input type="email" formControlName="email" id="email" class="form-control"
-                                placeholder="Email">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-danger"
-                            *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
-                            <span>El email <strong>es obligatorio</strong></span>
-                        </div>
+<div class="body-logo">
+    <img class="wave" src="./assets/img/wive.png" alt="">
+    <div class="contenedor">
+        <div class="img">
+            <img src="./assets/img/shopping3.svg" alt="">
+        </div>
+        <div class="contenido-login">
+            <form [formGroup]="loginForm" (ngSubmit)="logearUsuario()">
+                <img src="./assets/img/logo.png" alt="">
+                <h2>TiendaRec</h2>
+                <div class="input-div correo">
+                    <div class="i">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="mb-3">
-                        <div class="input-group mb-3">
-                            <input type="password" formControlName="password" id="password" class="form-control"
-                                placeholder="Password">
-                            <div class="input-group-append">
-                                <div class="input-group-text">
-                                    <i class="fas fa-lock"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-danger"
-                            *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
-                            <span>El password <strong>es obligatorio</strong></span>
-                        </div>
+                    <div class="div">
+                        <h5>Correo</h5>
+                        <input (focus)="focoInput($event)" (blur)="nofocoInput($event)"  type="email" formControlName="email" id="email" class="input" type="text">
                     </div>
-
-                    <div class="mb-3">
-                        <button type="submit" class="btn btn-primary w-100">INICIAR</button>
-                    </div>
-
-                </form>
-
-                <p class="mb-1">
-                    <a href="forgot-password.html">I forgot my password</a>
-                </p>
-                <div>
-                    <p class="mb-0 volver">
-                        <a routerLink="/tienda/registro" class="text-center ">Registrar</a>
-                        <a routerLink="/tienda/inicio" class="text-center ">Volver</a>
-                    </p>
                 </div>
-            </div>
+                <div class="text-danger mensaje"
+                    *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">
+                    <span>El email <strong>es obligatorio</strong></span>
+                </div>
+                <div class="input-div pass">
+                    <div class="i">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <div class="div">
+                        <h5>Contraseña</h5>
+                        <input (focus)="focoInput($event)" (blur)="nofocoInput($event)" formControlName="password" id="password" class="input" type="password">
+                    </div>
+                </div>
+                <div class="text-danger mensaje"
+                    *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">
+                    <span>El password <strong>es obligatorio</strong></span>
+                </div>
+                <input class="btn" value="Iniciar Sesion" type="submit">
+
+                <div class="enlaces d-flex">
+                    <a routerLink="/tienda/inicio" class="volver" href="">Volver al Inicio</a>
+                    <a routerLink="/tienda/registro" class="registrate" href="">Registrate</a>
+                </div>
+
+            </form>
         </div>
     </div>
 </div>
-<!-- /.login-box -->
-
-<!-- jQuery -->
-<script src="../../plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 5 -->
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/adminlte.min.js"></script>

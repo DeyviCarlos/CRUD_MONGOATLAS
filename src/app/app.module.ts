@@ -28,6 +28,8 @@ import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { CarouselModule } from './carousel/carousel.module';
 import { CarouselCategoriaModule } from './components/carousel-categoria/carousel-categoria.module';
+import { CatalogoProductoComponent } from './components/catalogo-producto/catalogo-producto.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { CarouselCategoriaModule } from './components/carousel-categoria/carouse
     RegistrarProductoComponent,
     PerfilComponent,
     ListarProductoComponent,
-    CatalogoComponent
+    CatalogoComponent,
+    CatalogoProductoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

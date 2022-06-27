@@ -47,5 +47,16 @@ export class RegistroComponent implements OnInit {
       this.usuarioForm.reset();
     })
   }
+  focoInput(event: any){
+    //parentNode o parentElement
+    let parent = <HTMLElement>event.target.parentElement.parentElement;
+    parent.classList.add("focus");
+  }
+  nofocoInput(event: any){
+    let parent = <HTMLElement>event.target.parentElement.parentElement;
+    if(event.target.value == ""){
+      parent.classList.remove("focus");
+    }
+  }
 
 }

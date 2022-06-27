@@ -16,11 +16,13 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { AuthGuard } from './auth.guard';
 import { CatalogoComponent } from './components/catalogo/catalogo.component';
 import { RegistrarProductoComponent } from './components/registrar-producto/registrar-producto.component';
+import { CatalogoProductoComponent } from './components/catalogo-producto/catalogo-producto.component';
 
 const routes: Routes = [
   {path: '', component: InicioComponent },
   {path: 'tienda/inicio', component: InicioComponent },
   {path: 'tienda/catalogo', component: CatalogoComponent },
+  {path: 'tienda/catalogo/:id', component: CatalogoProductoComponent },
   {path: 'tienda/nosotros', component: NosotrosComponent },
   {path: 'tienda/contactanos', component: ContactanosComponent },
   {path: 'tienda/registro', component: RegistroComponent },

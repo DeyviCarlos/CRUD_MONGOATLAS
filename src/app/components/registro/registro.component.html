@@ -1,89 +1,68 @@
-<div class="register">
-  <div class="container">
-    <div class="row  vh-100 justify-content-center align-items-center ">
-      <div class="col-auto bg-light p-5">
-
-        <p class="titulo text-center">REGISTRAR</p>
-
-        <form [formGroup]="usuarioForm" (ngSubmit)="registrarUsuario()">
-          <div class="mb-3">
-            <div class="input-group mb-3">
-              <input type="text" formControlName="nombre" id="nombre" class="form-control" placeholder="Full name">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-user"></span>
-                </div>
-              </div>
-            </div>
-            <div class="text-danger"
-              *ngIf="usuarioForm.get('nombre')?.hasError('required') && usuarioForm.get('nombre')?.touched">
-              <span>El nombre del usuario <strong>es obligatorio</strong></span>
-            </div>
+<div class="body-register">
+  <img class="wave" src="./assets/img/wive.png" alt="">
+  <div class="contenedor">
+    <div class="img">
+      <img src="./assets/img/shopping2.svg" alt="">
+    </div>
+    <div class="contenido-register">
+      <form [formGroup]="usuarioForm" (ngSubmit)="registrarUsuario()">
+        <img src="./assets/img/logo.png" alt="">
+        <h2>TiendaRec</h2>
+        <div class="input-div nombre">
+          <div class="i">
+            <i class="fas fa-user"></i>
           </div>
-          <div class="mb-3">
-            <div class="input-group mb-3">
-              <input type="email" formControlName="email" id="email" class="form-control" placeholder="Email">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
-                </div>
-              </div>
-            </div>
-            <div class="text-danger"
+          <div class="div">
+            <h5>Nombre</h5>
+            <input  (focus)="focoInput($event)" (blur)="nofocoInput($event)" formControlName="nombre" id="nombre" type="text" class="input">
+          </div>
+        </div>
+        <div class="text-danger mensaje"
+              *ngIf="usuarioForm.get('nombre')?.hasError('required') && usuarioForm.get('nombre')?.touched">
+            <span>El nombre <strong>es obligatorio</strong></span>
+        </div>
+        <div class="input-div correo">
+          <div class="i">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="div">
+            <h5>Correo</h5>
+            <input  (focus)="focoInput($event)" (blur)="nofocoInput($event)" formControlName="email" id="email" type="text" class="input">
+          </div>
+        </div>
+        <div class="text-danger mensaje"
               *ngIf="usuarioForm.get('email')?.hasError('required') && usuarioForm.get('email')?.touched">
               <span>El email <strong>es obligatorio</strong></span>
             </div>
+        <div class="input-div pass">
+          <div class="i">
+            <i class="fas fa-lock"></i>
           </div>
-          <div class="mb-3">
-            <div class="input-group mb-3">
-              <input type="password" formControlName="password" id="password" class="form-control"
-                placeholder="Password">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-lock"></span>
-                </div>
-              </div>
-            </div>
-            <div class="text-danger"
+          <div class="div">
+            <h5>Contraseña</h5>
+            <input  (focus)="focoInput($event)" (blur)="nofocoInput($event)" formControlName="password" id="password" type="password" class="input">
+          </div>
+        </div>
+        <div class="text-danger mensaje"
               *ngIf="usuarioForm.get('password')?.hasError('required') && usuarioForm.get('password')?.touched">
               <span>El password <strong>es obligatorio</strong></span>
             </div>
+        <div class="input-div repass">
+          <div class="i">
+            <i class="fas fa-lock"></i>
           </div>
-          <div class="mb-3">
-            <div class="input-group mb-3">
-              <input type="password" formControlName="repassword" id="repassword" class="form-control"
-                placeholder="Retype password">
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-lock"></span>
-                </div>
-              </div>
-            </div>
-            <div class="text-danger"
+          <div class="div">
+            <h5>ReContraseña</h5>
+            <input  (focus)="focoInput($event)" (blur)="nofocoInput($event)" formControlName="repassword" id="repassword" type="password" class="input">
+          </div>
+        </div>
+        <div class="text-danger mensaje"
               *ngIf="usuarioForm.get('repassword')?.hasError('required') && usuarioForm.get('repassword')?.touched">
               <span>El password <strong>es obligatorio</strong></span>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="agreeTerms" name="terms" value="agree">
-                <label for="agreeTerms">
-                  I agree to the <a href="#">terms</a>
-                </label>
-              </div>
-            </div>
-            <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" [disabled]="usuarioForm.invalid" class="btn btn-primary btn-block">Register</button>
-            </div>
-            <!-- /.col -->
-          </div>
-        </form>
-
-        <a routerLink="/tienda/login" class="text-center">I already have a membership</a>
-      </div>
+        </div>
+        <input [disabled]="usuarioForm.invalid" class="btn" value="Registrar" type="submit">
+        <a routerLink="/tienda/login" class="volver" href="">Login</a>
+      </form>
     </div>
   </div>
 </div>

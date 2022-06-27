@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-
+  
   logearUsuario(){
     let email = this.loginForm.get('email')?.value;
     let password = this.loginForm.get('password')?.value;
@@ -38,4 +37,17 @@ export class LoginComponent implements OnInit {
       this.loginForm.reset();
     })
   }
+  focoInput(event: any){
+    //parentNode o parentElement
+    let parent = <HTMLElement>event.target.parentElement.parentElement;
+    parent.classList.add("focus");
+  }
+  nofocoInput(event: any){
+    let parent = <HTMLElement>event.target.parentElement.parentElement;
+    if(event.target.value == ""){
+      parent.classList.remove("focus");
+    }
+  }
+
+
 }
